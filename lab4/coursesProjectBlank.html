@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//SQ//DTD HTML 2.0 HoTMetaL + extensions//EN">
+<HTML>
+<HEAD>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<TITLE>Courses Radio Button Project</TITLE>
+
+<SCRIPT Language="JavaScript">
+<!--
+
+
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#efefef" data-ng-app="myApp" data-ng-controller="main">
+
+<H2>Please choose three courses in order of preference:</H2>
+<H3>(You must choose different courses for your first second and third choice.)</H3>
+
+<FORM Name = "Courses">
+<TABLE>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1"><B>Course</B></TD>
+<TD ALIGN="CENTER" COLSTART="2"><B>First Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="3"><B>Second Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="4"><B>Third Choice</B></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">English</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" data-ng-model="choice1" name="choice1" VALUE="eng"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" data-ng-model="choice2" name="choice2" VALUE="eng"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" data-ng-model="choice3" name="choice3" VALUE="eng"></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">French</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" data-ng-model="choice1" NAME="Choice1" VALUE="fre"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" data-ng-model="choice2" NAME="Choice2" VALUE="fre"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" data-ng-model="choice3" NAME="Choice3" VALUE="fre"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Spanish</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" data-ng-model="choice1" NAME="Choice1" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" data-ng-model="choice2" NAME="Choice2" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" data-ng-model="choice3" NAME="Choice3" VALUE="spa"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Math</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" data-ng-model="choice1" NAME="Choice1" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" data-ng-model="choice2" NAME="Choice2" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" data-ng-model="choice3" NAME="Choice3" VALUE="mat"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Science</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" data-ng-model="choice1" NAME="Choice1" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" data-ng-model="choice2" NAME="Choice2" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" data-ng-model="choice3" NAME="Choice3" VALUE="sci"></TD>
+</TR>
+
+</TABLE>
+<P><button data-ng-click="submit()" SIZE="20">Submit</button>
+<INPUT TYPE="RESET" VALUE="Reset" SIZE="20"></P></FORM>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('main', function($scope) {
+        $scope.submit = function () {
+            if ($scope.choice1 !== $scope.choice2 && $scope.choice1 !== $scope.choice3 && $scope.choice2 !== $scope.choice3) {
+                alert('Success!');
+            } else {
+                alert('Please make sure you only have 1 class selected for each choice.');
+            }
+        };
+    });
+</script>
+</BODY>
+</HTML>
